@@ -64,8 +64,10 @@ namespace CardGame
 
         public bool PlayCard(Card card)
         {
-
-            if(card.Time > Time)
+			KeyValuePair<int, int> newTimePoint = buffManager.BuffCard(card);
+			int cardTime = newTimePoint.Key;
+			int cardPoint = newTimePoint.Value;
+            if(cardTime > Time)
             {
                 Debug.Log("Game manager: Trying to do " + card + " but don't have enough time");
                 return false;
@@ -73,12 +75,12 @@ namespace CardGame
             else
             {
                 Debug.Log("Game manager: Played card: " + card);
-                Time -= card.Time;
+                Time -= cardTime;
                 spawner.RandomlyGetOne();
 				buffManager.ChangingBuff(card);
 				if (Points.ContainsKey(card.Type))
                 {
-                    Points[card.Type] += card.Points;
+                    Points[card.Type] += cardPoint;
                 }
                 viz.DisplayStatus();
                 return true;

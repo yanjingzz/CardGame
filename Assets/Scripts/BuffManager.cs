@@ -20,6 +20,24 @@ namespace CardGame
 			public int timeLeft;
 		};
 		List<MyBuff> states = new List<MyBuff>();
+		public KeyValuePair<int, int> BuffCard(Card card)
+		{
+			int t = card.Time;
+			int p = card.Points;
+			foreach (MyBuff myBuff in states)
+			{
+				Buff buff = myBuff.buff;
+				int type = (int)card.Type;
+				if (type < 4)
+				{
+					int timeBuff = buff.Effects[type].time;
+					int pointBuff = buff.Effects[type].point;
+					t = Mathf.Max(60, t + timeBuff * 60);
+					p = Mathf.Max(1, p + pointBuff);
+				}
+			}
+			return new KeyValuePair<int, int>(t, p);
+		}
 		public void ChangingBuff(Card card)
 		{
 			foreach (AddingBuffs addBuff in card.AddBuffs)
@@ -33,10 +51,13 @@ namespace CardGame
 						Debug.Log("Same buff");
 					} else
 					{
-						int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
-						states.Add(new MyBuff(newState, t));
-						GameObject mybuff = Instantiate(buffPrefab, buffSlot);
-						mybuff.GetComponent<BuffViz>().buff = newState;
+						if (Random.Range(0, 1) <= addBuff.probability)
+						{
+							int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
+							states.Add(new MyBuff(newState, t));
+							GameObject mybuff = Instantiate(buffPrefab, buffSlot);
+							mybuff.GetComponent<BuffViz>().buff = newState;
+						}
 					}
 				}
 			}
