@@ -14,11 +14,11 @@ namespace CardGame
         public void DisplayStatus()
         {
             GameManager manager = GameManager.Instance;
-            time.text = manager.Time.ToString();
-            art.text = manager.Points[CardType.Art].ToString();
-            feel.text = manager.Points[CardType.Feel].ToString();
-            gameplay.text = manager.Points[CardType.Gameplay].ToString();
-            tech.text = manager.Points[CardType.Tech].ToString();
+            time.text = "Time: " + manager.Time.ToString();
+            art.text = "Art: " + manager.Points[CardType.Art].ToString();
+            feel.text = "Feel: " + manager.Points[CardType.Feel].ToString();
+            gameplay.text = "Gameplay: " + manager.Points[CardType.Gameplay].ToString();
+            tech.text = "Tech: " +manager.Points[CardType.Tech].ToString();
 
         }
 

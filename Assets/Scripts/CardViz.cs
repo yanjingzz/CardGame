@@ -5,39 +5,43 @@ using UnityEngine.UI;
 
 namespace CardGame
 {
+    [RequireComponent(typeof(CardManager))]
     public class CardViz : MonoBehaviour
     {
-        [SerializeField] Card _card;
         public Image image;
         public Text title;
         public Text points;
         public Text time;
         public Text description;
-        public Card Card
+        CardManager cardManager;
+        public void Start()
         {
-            get { return _card; }
-            set
-            {
-                _card = value;
-                DisplayCard();
-            }
+            cardManager = GetComponent<CardManager>();
         }
 
         public void DisplayCard ()
         {
-            if(_card != null)
+            if(cardManager == null)
             {
-                image.sprite = _card.Image;
-                title.text = _card.Title;
-                description.text = _card.Description;
-                time.text = (_card.Time / 60).ToString();
-                points.text = (_card.Points).ToString();
+                Debug.LogWarning("CardViz: missing card manager");
+            }
+            Card card = cardManager.Card;
+            if(card != null)
+            {
+                image.sprite = card.Image;
+                title.text = card.Title;
+                description.text = card.Description;
+                time.text = (card.Time / 60).ToString();
+                points.text = (card.Points).ToString();
 
             }
         }
+
         private void OnValidate()
         {
+            cardManager = GetComponent<CardManager>();
             DisplayCard();
+
         }
     }
 
