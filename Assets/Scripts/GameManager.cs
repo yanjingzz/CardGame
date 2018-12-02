@@ -9,6 +9,7 @@ namespace CardGame
         public static GameManager Instance { get; private set; }
         GameStatusViz viz;
 		CardSpawner spawner;
+        public List<Card> initialHand = new List<Card>();
         public int Time 
         { 
             get { return _time; } 
@@ -51,6 +52,12 @@ namespace CardGame
                 Debug.LogWarning("Game manager: missing visualizer");
             }
             viz.DisplayStatus();
+
+            foreach(Card card in initialHand)
+            {
+                spawner.Spawn(card);
+            }
+
         }
 
         public bool PlayCard(Card card)
