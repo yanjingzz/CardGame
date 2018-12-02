@@ -11,6 +11,7 @@ namespace CardGame
 		CardSpawner spawner;
 		BuffManager buffManager;
         public List<Card> initialHand = new List<Card>();
+        List<Card> currentHand = new List<Card>();
         public int Time 
         { 
             get { return _time; } 
@@ -58,6 +59,7 @@ namespace CardGame
             foreach(Card card in initialHand)
             {
                 spawner.Spawn(card);
+                currentHand.Add(card);
             }
 
         }
@@ -66,25 +68,31 @@ namespace CardGame
         {
 			KeyValuePair<int, int> newTimePoint = buffManager.BuffCard(card);
 			int cardTime = newTimePoint.Key;
-			int cardPoint = newTimePoint.Value;
+			int cardPoints = newTimePoint.Value;
             if(cardTime > Time)
             {
                 Debug.Log("Game manager: Trying to do " + card + " but don't have enough time");
                 return false;
             }
-            else
+
+            currentHand.Remove(card);
+
+            Time -= cardTime;
+			if (Points.ContainsKey(card.Type))
             {
-                Debug.Log("Game manager: Played card: " + card);
-                Time -= cardTime;
-                spawner.RandomlyGetOne();
-				buffManager.ChangingBuff(card);
-				if (Points.ContainsKey(card.Type))
-                {
-                    Points[card.Type] += cardPoint;
-                }
-                viz.DisplayStatus();
-                return true;
+                Points[card.Type] += cardPoints;
             }
+            viz.DisplayStatus();
+
+            spawner.cardPool.AddRange(card.UnlockCards);
+
+            buffManager.ChangingBuff(card);
+
+            currentHand.Add(spawner.RandomlyGetOne());
+            DetectGameOver();
+
+            Debug.Log("Game manager: Played card: " + card);
+            return true;
 
         }
 
@@ -101,6 +109,20 @@ namespace CardGame
         public void Restart()
         {
             SceneManager.LoadScene("GameScene");
+        }
+
+        public void DetectGameOver()
+        {
+            bool gameOver = true;
+            foreach(Card card in currentHand)
+            {
+                if (card.Time <= Time)
+                {
+                    gameOver = false;
+                }
+            }
+            if (gameOver)
+                GameOver();
         }
     }
 }

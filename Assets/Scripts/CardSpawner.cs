@@ -9,13 +9,13 @@ namespace CardGame
 		public HandViz hands;
 		public List<Card> cardPool;
 		public GameObject cardPrefab;
-		public void RandomlyGetOne()
+		public Card RandomlyGetOne()
 		{
 			Card card = cardPool[Random.Range(0, cardPool.Count)];
 
             Spawn(card);
 
-
+            return card;
         }
 
         public void Spawn(Card card)
@@ -36,5 +36,6 @@ namespace CardGame
             handCard.GetComponent<CardManager>().Card = card;
             hands.AddCard(handCard);
         }
+
     }
 }
