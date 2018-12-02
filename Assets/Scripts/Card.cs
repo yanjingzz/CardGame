@@ -11,7 +11,7 @@ namespace CardGame
         public Sprite Image;
         public CardType Type;
         public int Time; // in minutes
-        public int Points;
+        public int Points; 
     }
 
     public enum CardType
