@@ -11,7 +11,12 @@ namespace CardGame
         public Sprite Image;
         public CardType Type;
         public int Time; // in minutes
-        public int Points; 
+        public int Points;
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 
     public enum CardType
@@ -22,5 +27,6 @@ namespace CardGame
         Tech,
         Event
     }
+    
 }
 
