@@ -19,13 +19,24 @@ namespace CardGame
                 Destroy(gameObject);
             }
         }
+
+        public Dictionary<CardType, int> Points { get; private set; } 
         private void Start()
         {
+            Points = new Dictionary<CardType, int>(); 
             Time = 48 * 60;
+            Points.Add(CardType.Art, 0);
+            Points.Add(CardType.Feel, 0);
+            Points.Add(CardType.Gameplay, 0);
+            Points.Add(CardType.Tech, 0);
         }
         public void PlayCard(Card card)
         {
             Time -= card.Time;
+            if(card.Type != CardType.Event)
+            {
+                Points[card.Type] += card.Points;
+            }
         }
 
         public void Discard(Card card)
