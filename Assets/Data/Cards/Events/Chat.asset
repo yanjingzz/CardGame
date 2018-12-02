@@ -20,14 +20,14 @@ MonoBehaviour:
   UnlockCards: []
   AddBuffs:
   - buff: {fileID: 11400000, guid: 77f6c9f960ba4a7409852c903c298d05, type: 2}
-    probability: 1
+    probability: 0.9
     come: 0
     overrideLength: 0
   - buff: {fileID: 11400000, guid: dd1bbb4006177ce4c815968d7d76b9aa, type: 2}
-    probability: 1
+    probability: 0.8
     come: 1
     overrideLength: 0
   - buff: {fileID: 11400000, guid: aa124c0aca0e2a5468208c558ac4d69b, type: 2}
-    probability: 1
+    probability: 0.7
     come: 0
     overrideLength: 0

@@ -57,7 +57,7 @@ namespace CardGame
 						{
 							int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
 							GameObject mybuff = Instantiate(buffPrefab, buffSlot);
-							mybuff.GetComponent<BuffViz>().buff = newState;
+							mybuff.GetComponent<BuffViz>().Buff = newState;
 							states.Add(new MyBuff(newState, t, mybuff));
 						}
 					}

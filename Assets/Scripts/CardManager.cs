@@ -59,7 +59,7 @@ namespace CardGame
             Vector3[] v = new Vector3[4];
             hand.GetComponent<RectTransform>().GetWorldCorners(v);
 
-            Debug.Log(v[0].x + ", " + v[0].y + ", " + v[2].x + ", " + v[2].y);
+            //Debug.Log(v[0].x + ", " + v[0].y + ", " + v[2].x + ", " + v[2].y);
             Debug.Log(transform.position);
             // Check to see if the point is in the calculated bounds
             if (transform.position.x >= v[0].x &&
