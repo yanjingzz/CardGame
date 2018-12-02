@@ -14,7 +14,7 @@ namespace CardGame
         public Text time;
         public Text description;
         CardManager cardManager;
-        public void Start()
+        public void Awake()
         {
             cardManager = GetComponent<CardManager>();
         }
@@ -24,6 +24,7 @@ namespace CardGame
             if(cardManager == null)
             {
                 Debug.LogWarning("CardViz: missing card manager");
+				return;
             }
             Card card = cardManager.Card;
             if(card != null)

@@ -9,6 +9,7 @@ namespace CardGame
 		public string Title;
 		public string Description;
 		public BuffType[] Effects;
+		public int length = 2880;
 	}
 
 	[System.Serializable]

@@ -17,3 +17,7 @@ MonoBehaviour:
   Type: 1
   Time: 240
   Points: 4
+  UnlockCards:
+  - {fileID: 11400000, guid: 7ee8f94b02d13e245b764ffcab147111, type: 2}
+  - {fileID: 11400000, guid: 618d1d446e5e0ba4baefd39a5cd48bfd, type: 2}
+  AddBuffs: []

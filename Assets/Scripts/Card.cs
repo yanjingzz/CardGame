@@ -19,7 +19,17 @@ namespace CardGame
         }
 
         public List<Card> UnlockCards;
+		public List<AddingBuffs> AddBuffs;
     }
+
+	[System.Serializable]
+	public class AddingBuffs
+	{
+		public Buff buff;
+		public float probability = 1.0f;
+		public bool come = true;
+		public int overrideLength = 0;
+	}
 
     public enum CardType
     {

@@ -9,14 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
-  m_Name: Controls
+  m_Name: Eat
   m_EditorClassIdentifier: 
-  Title: Controls
+  Title: Eat
   Description: This is the description
   Image: {fileID: 0}
-  Type: 3
-  Time: 120
-  Points: 2
-  UnlockCards:
-  - {fileID: 11400000, guid: f3eea65519af60943bb3194c84c435c2, type: 2}
-  AddBuffs: []
+  Type: 4
+  Time: 30
+  Points: 0
+  UnlockCards: []
+  AddBuffs:
+  - buff: {fileID: 11400000, guid: d1738da40fcecae49b8827cc55b143ad, type: 2}
+    probability: 1
+    come: 0
+    overrideLength: 0
+  - buff: {fileID: 11400000, guid: aa124c0aca0e2a5468208c558ac4d69b, type: 2}
+    probability: 1
+    come: 0
+    overrideLength: 0

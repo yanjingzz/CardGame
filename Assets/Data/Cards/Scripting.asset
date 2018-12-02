@@ -18,6 +18,6 @@ MonoBehaviour:
   Time: 360
   Points: 6
   UnlockCards:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 61d9339a2e20eb0458dbc1d76d1e8ebb, type: 2}
+  - {fileID: 11400000, guid: 7ccf061d761479544a1002e585408693, type: 2}
+  AddBuffs: []

@@ -9,15 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
-  m_Name: Concept Art
+  m_Name: Publish
   m_EditorClassIdentifier: 
-  Title: Concept Art
-  Description: You need the art.
+  Title: Publish
+  Description: Thank you for playing
   Image: {fileID: 0}
-  Type: 0
-  Time: 300
-  Points: 5
-  UnlockCards:
-  - {fileID: 11400000, guid: 539990963fba5a04fab98a91e43e45a4, type: 2}
-  - {fileID: 11400000, guid: 7ad1e990208e76f4dabdeeef47ebafb2, type: 2}
+  Type: 5
+  Time: 30
+  Points: 0
+  UnlockCards: []
   AddBuffs: []

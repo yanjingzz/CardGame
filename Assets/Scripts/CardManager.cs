@@ -8,25 +8,26 @@ namespace CardGame
     public class CardManager : MonoBehaviour
     {   
         RectTransform hand;
-        [SerializeField] Card _card;
+		CardViz viz;
+		[SerializeField] Card _card;
         public Card Card 
         { 
             get { return _card; }
             set
             {
                 _card = value;
-                if(viz != null)
+				if(viz != null)
                 {
                     viz.DisplayCard();
                 }
             }
         }
-
-        CardViz viz;
-        private void Start()
+        
+        private void Awake()
         {
             GetComponent<DragNDropBehaviour>().OnDrop += OnDrop;
             viz = GetComponent<CardViz>();
+			Debug.Log("viz", viz);
             if(_card == null)
             {
                 Debug.LogWarning("Card manager: missing card");

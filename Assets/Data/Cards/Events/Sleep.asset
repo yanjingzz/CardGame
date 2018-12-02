@@ -9,14 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
-  m_Name: Controls
+  m_Name: Sleep
   m_EditorClassIdentifier: 
-  Title: Controls
+  Title: Sleep
   Description: This is the description
   Image: {fileID: 0}
-  Type: 3
-  Time: 120
-  Points: 2
-  UnlockCards:
-  - {fileID: 11400000, guid: f3eea65519af60943bb3194c84c435c2, type: 2}
-  AddBuffs: []
+  Type: 4
+  Time: 360
+  Points: 0
+  UnlockCards: []
+  AddBuffs:
+  - buff: {fileID: 11400000, guid: 23f21344757091e4fb6903bfc12752a5, type: 2}
+    probability: 1
+    come: 0
+    overrideLength: 0
+  - buff: {fileID: 11400000, guid: dd1bbb4006177ce4c815968d7d76b9aa, type: 2}
+    probability: 1
+    come: 0
+    overrideLength: 0
