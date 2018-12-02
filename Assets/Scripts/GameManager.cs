@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 namespace CardGame
 {
     public class GameManager : MonoBehaviour
@@ -9,7 +9,19 @@ namespace CardGame
         public static GameManager Instance { get; private set; }
         GameStatusViz viz;
 		CardSpawner spawner;
-        public int Time { get; private set; }
+        public int Time 
+        { 
+            get { return _time; } 
+            private set
+            {
+                _time = value;
+                if(_time <= 0)
+                {
+                    GameOver();
+                }
+            }
+        }
+        private int _time;
         private void Awake()
         {
             if(Instance == null)
@@ -41,21 +53,42 @@ namespace CardGame
             viz.DisplayStatus();
         }
 
-        public void PlayCard(Card card)
+        public bool PlayCard(Card card)
         {
-            Debug.Log("Game manager: Played card: " + card);
-            Time -= card.Time;
-			spawner.RandomlyGetOne();
-            if(Points.ContainsKey(card.Type))
+
+            if(card.Time > Time)
             {
-                Points[card.Type] += card.Points;
+                Debug.Log("Game manager: Trying to do " + card + " but don't have enough time");
+                return false;
             }
-            viz.DisplayStatus();
+            else
+            {
+                Debug.Log("Game manager: Played card: " + card);
+                Time -= card.Time;
+                spawner.RandomlyGetOne();
+                if (Points.ContainsKey(card.Type))
+                {
+                    Points[card.Type] += card.Points;
+                }
+                viz.DisplayStatus();
+                return true;
+            }
+
         }
 
         public void Discard(Card card)
         {
 
+        }
+
+        public void GameOver()
+        {
+            viz.DisplayGameOver();
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

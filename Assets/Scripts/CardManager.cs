@@ -27,7 +27,7 @@ namespace CardGame
         {
             GetComponent<DragNDropBehaviour>().OnDrop += OnDrop;
             viz = GetComponent<CardViz>();
-			Debug.Log("viz", viz);
+			//Debug.Log("viz", viz);
             if(_card == null)
             {
                 Debug.LogWarning("Card manager: missing card");
@@ -43,13 +43,15 @@ namespace CardGame
         {
             if(InPlayArea())
             {
-                GameManager.Instance.PlayCard(_card);
-                Destroy(gameObject);
+                bool played = GameManager.Instance.PlayCard(_card);
+                if(played)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+                //TODO: some cool animation
             }
-            else
-            {
-                hand.GetComponent<HandViz>().LayoutContent();
-            }
+            hand.GetComponent<HandViz>().LayoutContent();
         }
 
         private bool InPlayArea()

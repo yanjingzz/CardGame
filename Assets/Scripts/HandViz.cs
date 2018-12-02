@@ -45,7 +45,7 @@ namespace CardGame
             var h = rt.rect.height;
             var w = rt.rect.width;
 
-            Debug.Log("layout: " + layoutRT.rect + " hand: " + h + ", " + w);
+            //Debug.Log("layout: " + layoutRT.rect + " hand: " + h + ", " + w);s
 
             if(lh > 0 && lw > 0)
             {
@@ -57,9 +57,19 @@ namespace CardGame
                 screenHeight = -1;
                 screenWidth = -1;
             }
+            foreach(Transform child in layout.transform)
+            {
+                child.localScale = new Vector3(1, 1, 1);
+            }
             LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRT);
 
 
+        }
+
+        public void AddCard(GameObject card)
+        {
+            card.transform.SetParent(layout.transform);
+            LayoutContent();
         }
 
     }

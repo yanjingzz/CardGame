@@ -6,15 +6,16 @@ namespace CardGame
 {
 	public class CardSpawner : MonoBehaviour
 	{
-		public Transform hands;
+		public HandViz hands;
 		public List<Card> cardPool;
 		public GameObject cardPrefab;
 		public void RandomlyGetOne()
 		{
 			Card card = cardPool[Random.Range(0, cardPool.Count)];
-			Debug.Log(card);
-			GameObject handCard = Instantiate(cardPrefab, hands);
+			Debug.Log("Spawning: " + card);
+			GameObject handCard = Instantiate(cardPrefab);
 			handCard.GetComponent<CardManager>().Card = card;
+            hands.AddCard(handCard);
 		}
 	}
 }
