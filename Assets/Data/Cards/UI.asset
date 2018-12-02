@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
   m_Name: UI
   m_EditorClassIdentifier: 
-  Title: 
-  Description: 
+  Title: UI
+  Description: You need an interface
   Image: {fileID: 0}
-  Type: 0
-  Time: 0
-  Points: 0
+  Type: 2
+  Time: 120
+  Points: 2
