@@ -36,5 +36,6 @@ namespace CardGame
             handCard.GetComponent<CardManager>().Card = card;
             hands.AddCard(handCard);
         }
+
     }
 }

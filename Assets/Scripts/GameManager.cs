@@ -74,18 +74,22 @@ namespace CardGame
             }
 
             currentHand.Remove(card);
-            Debug.Log("Game manager: Played card: " + card);
+
             Time -= card.Time;
-            currentHand.Add( spawner.RandomlyGetOne() );
-			buffManager.ChangingBuff(card);
 			if (Points.ContainsKey(card.Type))
             {
                 Points[card.Type] += card.Points;
             }
             viz.DisplayStatus();
 
+            spawner.cardPool.AddRange(card.UnlockCards);
+
+            buffManager.ChangingBuff(card);
+
+            currentHand.Add(spawner.RandomlyGetOne());
             DetectGameOver();
 
+            Debug.Log("Game manager: Played card: " + card);
             return true;
 
         }
