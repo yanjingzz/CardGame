@@ -24,6 +24,6 @@ MonoBehaviour:
     come: 0
     overrideLength: 0
   - buff: {fileID: 11400000, guid: aa124c0aca0e2a5468208c558ac4d69b, type: 2}
-    probability: 1
+    probability: 0.9
     come: 0
     overrideLength: 0

@@ -20,6 +20,6 @@ MonoBehaviour:
   UnlockCards: []
   AddBuffs:
   - buff: {fileID: 11400000, guid: 23f34ac20c4b54c46845413e1675cd10, type: 2}
-    probability: 1
+    probability: 0.8
     come: 1
     overrideLength: 0

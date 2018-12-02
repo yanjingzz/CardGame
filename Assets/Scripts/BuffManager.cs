@@ -51,7 +51,7 @@ namespace CardGame
 						Debug.Log("Same buff");
 					} else
 					{
-						if (Random.Range(0, 1) <= addBuff.probability)
+						if (Random.Range(0f, 1f) <= addBuff.probability)
 						{
 							int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
 							states.Add(new MyBuff(newState, t));
