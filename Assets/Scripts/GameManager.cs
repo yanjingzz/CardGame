@@ -9,6 +9,7 @@ namespace CardGame
         public static GameManager Instance { get; private set; }
         GameStatusViz viz;
 		CardSpawner spawner;
+		BuffManager buffManager;
         public List<Card> initialHand = new List<Card>();
         public int Time 
         { 
@@ -47,6 +48,7 @@ namespace CardGame
             Points.Add(CardType.Tech, 0);
             viz = GetComponent<GameStatusViz>();
 			spawner = GetComponent<CardSpawner>();
+			buffManager = GetComponent<BuffManager>();
             if(viz == null)
             {
                 Debug.LogWarning("Game manager: missing visualizer");
@@ -73,7 +75,8 @@ namespace CardGame
                 Debug.Log("Game manager: Played card: " + card);
                 Time -= card.Time;
                 spawner.RandomlyGetOne();
-                if (Points.ContainsKey(card.Type))
+				buffManager.ChangingBuff(card);
+				if (Points.ContainsKey(card.Type))
                 {
                     Points[card.Type] += card.Points;
                 }
