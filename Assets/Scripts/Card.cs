@@ -17,6 +17,8 @@ namespace CardGame
         {
             return Title;
         }
+
+        public List<Card> UnlockCards;
     }
 
     public enum CardType
@@ -25,7 +27,8 @@ namespace CardGame
         Gameplay,
         Feel,
         Tech,
-        Event
+        Event,
+        Choice
     }
     
 }
