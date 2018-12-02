@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01986f31e8e526a459de3fcabfda3731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hands: {fileID: 1053345375}
+  hands: {fileID: 212451563}
   cardPool:
   - {fileID: 11400000, guid: 7ee8f94b02d13e245b764ffcab147111, type: 2}
   - {fileID: 11400000, guid: 7ad1e990208e76f4dabdeeef47ebafb2, type: 2}
