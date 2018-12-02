@@ -8,6 +8,7 @@ namespace CardGame
 	{
 		public string Title;
 		public string Description;
+        public Sprite Image;
 		public BuffType[] Effects;
 	}
 
