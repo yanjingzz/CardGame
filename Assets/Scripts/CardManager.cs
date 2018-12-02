@@ -7,7 +7,7 @@ namespace CardGame
     [RequireComponent(typeof(DragNDropBehaviour))]
     public class CardManager : MonoBehaviour
     {   
-        RectTransform hand;
+        GameObject hand;
         [SerializeField] Card _card;
         public Card Card 
         { 
@@ -31,7 +31,7 @@ namespace CardGame
             {
                 Debug.LogWarning("Card manager: missing card");
             }
-            hand = GameObject.FindWithTag("Hand").GetComponent<RectTransform>();
+            hand = GameObject.FindWithTag("Hand");
             if(hand == null)
             {
                 Debug.LogWarning("Card manager: missing hand area");
@@ -47,14 +47,14 @@ namespace CardGame
             }
             else
             {
-                //TODO: return to initial position
+                hand.GetComponent<HandViz>().LayoutContent();
             }
         }
 
         private bool InPlayArea()
         {
             Vector3[] v = new Vector3[4];
-            hand.GetWorldCorners(v);
+            hand.GetComponent<RectTransform>().GetWorldCorners(v);
 
             Debug.Log(v[0].x + ", " + v[0].y + ", " + v[2].x + ", " + v[2].y);
             Debug.Log(transform.position);
