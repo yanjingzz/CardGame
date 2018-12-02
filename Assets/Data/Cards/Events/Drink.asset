@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
   m_Name: Drink
   m_EditorClassIdentifier: 
-  Title: Drink
-  Description: This is the description
+  Title: Drink beer
+  Description: A drink never hurt nobody.
   Image: {fileID: 0}
   Type: 4
   Time: 20

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Eat
   m_EditorClassIdentifier: 
   Title: Eat
-  Description: This is the description
+  Description: You gotta eat
   Image: {fileID: 0}
   Type: 4
   Time: 30

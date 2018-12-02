@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Internet
   m_EditorClassIdentifier: 
   Title: Internet
-  Description: This is the description
+  Description: I'm not procrastinating. I'm researching
   Image: {fileID: 0}
   Type: 4
   Time: 60

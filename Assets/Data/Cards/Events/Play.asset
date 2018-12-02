@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
   m_Name: Play
   m_EditorClassIdentifier: 
-  Title: Play
+  Title: Play with my dog
   Description: 
   Image: {fileID: 0}
   Type: 4

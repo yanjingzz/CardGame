@@ -66,7 +66,7 @@ namespace CardGame
 					Buff newState = addBuff.buff;
 					Debug.Log("remove buff " + newState.Title);
 					MyBuff myBuff = states.Find(x => x.buff == newState);
-					if (myBuff.buff.Title.Length > 0)
+					if (myBuff.buff != null)
 					{
 						if (Random.Range(0f, 1f) <= addBuff.probability)
 						{

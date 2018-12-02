@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Sleep
   m_EditorClassIdentifier: 
   Title: Sleep
-  Description: This is the description
+  Description: Sleep depravation is not a joke
   Image: {fileID: 0}
   Type: 4
   Time: 360
