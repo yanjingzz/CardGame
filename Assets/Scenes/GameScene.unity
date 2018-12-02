@@ -1077,6 +1077,7 @@ GameObject:
   - component: {fileID: 1598635837}
   - component: {fileID: 1598635839}
   - component: {fileID: 1598635840}
+  - component: {fileID: 1598635841}
   m_Layer: 5
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1095,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc7c2462f9514f74bb27d3eaf7011e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHand: []
 --- !u!4 &1598635838
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,7 +1126,7 @@ MonoBehaviour:
   feel: {fileID: 932607841}
   tech: {fileID: 1651378621}
   gameplay: {fileID: 1842893229}
-  GameOverPanel: {fileID: 1753380953}
+  GameOverPanel: {fileID: 0}
 --- !u!114 &1598635840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01986f31e8e526a459de3fcabfda3731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hands: {fileID: 1053345376}
+  hands: {fileID: 0}
   cardPool:
   - {fileID: 11400000, guid: 7ee8f94b02d13e245b764ffcab147111, type: 2}
   - {fileID: 11400000, guid: 7ad1e990208e76f4dabdeeef47ebafb2, type: 2}
@@ -1168,6 +1170,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 196def854f3a51040981dd38869861cd, type: 2}
   - {fileID: 11400000, guid: 605e35e0dafdc744c9df9371b0a8c990, type: 2}
   cardPrefab: {fileID: 1456796818289876, guid: 3c0368f543a5a4d21b52281b4b681606, type: 2}
+--- !u!114 &1598635841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598635836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce429539ae9878c43ad6067bffa29f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffSlot: {fileID: 628393131}
+  buffPrefab: {fileID: 1519362661977016, guid: e16f6e9f8fbc34b10b468d3f090081a7, type: 2}
 --- !u!1 &1611857204
 GameObject:
   m_ObjectHideFlags: 0
