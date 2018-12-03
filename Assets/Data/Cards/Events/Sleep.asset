@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Sleep
   Description: Sleep depravation is not a joke
-  Image: {fileID: 0}
+  Image: {fileID: 21300008, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 4
   Time: 360
   Points: 0

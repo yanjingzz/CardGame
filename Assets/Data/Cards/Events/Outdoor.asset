@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Go outside
   Description: Taking a walk helps clear your mind
-  Image: {fileID: 0}
+  Image: {fileID: 21300034, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 4
   Time: 60
   Points: 0

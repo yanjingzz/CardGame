@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: Animation
   m_EditorClassIdentifier: 
   Title: Animation
-  Description: What if they are moving
-  Image: {fileID: 0}
+  Description: Make'em move, babe
+  Image: {fileID: 21300036, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 0
   Time: 240
   Points: 4
+  UnlockCards: []
+  AddBuffs: []

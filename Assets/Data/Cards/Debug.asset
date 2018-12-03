@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: Debug
   m_EditorClassIdentifier: 
   Title: Debug
-  Description: This is the description
-  Image: {fileID: 0}
+  Description: Kill one, spawn three
+  Image: {fileID: 21300052, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 3
   Time: 60
   Points: 1
+  UnlockCards: []
+  AddBuffs: []

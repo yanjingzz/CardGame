@@ -7,7 +7,21 @@ namespace CardGame
 {
 	public class BuffManager : MonoBehaviour
 	{
-		public Transform buffSlot;
+        public static BuffManager Instance { get; private set; }
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+
+            }
+            else if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public Transform buffSlot;
 		public GameObject buffPrefab;
 		private struct MyBuff
 		{
@@ -40,43 +54,49 @@ namespace CardGame
 			}
 			return new KeyValuePair<int, int>(t, p);
 		}
-		public void ChangingBuff(Card card)
+		public bool ChangingBuff(Card card)
 		{
+            bool changed = false;
 			foreach (AddingBuffs addBuff in card.AddBuffs)
 			{
 				if (addBuff.come)
 				{
 					Buff newState = addBuff.buff;
-					Debug.Log("buff " + newState.Title);
+					
 					if (states.Exists(x => x.buff == newState))
 					{
-						Debug.Log("Same buff");
+						Debug.Log("Same buff" + newState.Title);
 					} else
 					{
 						if (Random.Range(0f, 1f) <= addBuff.probability)
 						{
-							int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
+                            Debug.Log("Adding buff " + newState.Title);
+                            int t = addBuff.overrideLength > 0 ? addBuff.overrideLength : newState.length;
 							GameObject mybuff = Instantiate(buffPrefab, buffSlot);
 							mybuff.GetComponent<BuffViz>().Buff = newState;
 							states.Add(new MyBuff(newState, t, mybuff));
+                            changed = true;
 						}
 					}
 				} else
 				{
 					Buff newState = addBuff.buff;
-					Debug.Log("remove buff " + newState.Title);
+					
 					MyBuff myBuff = states.Find(x => x.buff == newState);
 					if (myBuff.buff != null)
 					{
 						if (Random.Range(0f, 1f) <= addBuff.probability)
 						{
-							if (myBuff.buffInGame != null)
+                            Debug.Log("Removing buff " + newState.Title);
+                            if (myBuff.buffInGame != null)
 								Destroy(myBuff.buffInGame);
 							states.Remove(myBuff);
-						}
+                            changed = true;
+                        }
 					}
 				}
 			}
+            return changed;
 		}
 	}
 }

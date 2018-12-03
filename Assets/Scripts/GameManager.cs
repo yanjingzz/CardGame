@@ -9,9 +9,8 @@ namespace CardGame
         public static GameManager Instance { get; private set; }
         GameStatusViz viz;
 		CardSpawner spawner;
-		BuffManager buffManager;
         public List<Card> initialHand = new List<Card>();
-        List<Card> currentHand = new List<Card>();
+        List<CardManager> currentHand = new List<CardManager>();
         public int Time 
         { 
             get { return _time; } 
@@ -49,7 +48,6 @@ namespace CardGame
             Points.Add(CardType.Tech, 0);
             viz = GetComponent<GameStatusViz>();
 			spawner = GetComponent<CardSpawner>();
-			buffManager = GetComponent<BuffManager>();
             if(viz == null)
             {
                 Debug.LogWarning("Game manager: missing visualizer");
@@ -58,15 +56,15 @@ namespace CardGame
 
             foreach(Card card in initialHand)
             {
-                spawner.Spawn(card);
-                currentHand.Add(card);
+                currentHand.Add(spawner.Spawn(card));
             }
 
         }
 
-        public bool PlayCard(Card card)
+        public bool PlayCard(CardManager cardManager)
         {
-			KeyValuePair<int, int> newTimePoint = buffManager.BuffCard(card);
+            Card card = cardManager.Card;
+			KeyValuePair<int, int> newTimePoint = BuffManager.Instance.BuffCard(card);
 			int cardTime = newTimePoint.Key;
 			int cardPoints = newTimePoint.Value;
             if(cardTime > Time)
@@ -75,7 +73,7 @@ namespace CardGame
                 return false;
             }
 
-            currentHand.Remove(card);
+            currentHand.Remove(cardManager);
 
             Time -= cardTime;
 			if (Points.ContainsKey(card.Type))
@@ -86,7 +84,14 @@ namespace CardGame
 
             spawner.cardPool.AddRange(card.UnlockCards);
 
-            buffManager.ChangingBuff(card);
+            bool changed = BuffManager.Instance.ChangingBuff(card);
+            if(changed)
+            {
+                foreach(CardManager manager in currentHand)
+                {
+                    manager.UpdateValues();
+                }
+            }
 
             currentHand.Add(spawner.RandomlyGetOne());
             DetectGameOver();
@@ -114,9 +119,9 @@ namespace CardGame
         public void DetectGameOver()
         {
             bool gameOver = true;
-            foreach(Card card in currentHand)
+            foreach(CardManager manager in currentHand)
             {
-                if (card.Time <= Time)
+                if (manager.Card.Time <= Time)
                 {
                     gameOver = false;
                 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace CardGame
 				if(viz != null)
                 {
                     viz.DisplayCard();
+                    UpdateValues();
                 }
             }
         }
@@ -26,6 +28,7 @@ namespace CardGame
         private void Awake()
         {
             GetComponent<DragNDropBehaviour>().OnDrop += OnDrop;
+            GetComponent<DragNDropBehaviour>().OnPickup+= OnPickUp;
             viz = GetComponent<CardViz>();
 			//Debug.Log("viz", viz);
             if(_card == null)
@@ -43,7 +46,7 @@ namespace CardGame
         {
             if(InPlayArea())
             {
-                bool played = GameManager.Instance.PlayCard(_card);
+                bool played = GameManager.Instance.PlayCard(this);
                 if(played)
                 {
                     Destroy(gameObject);
@@ -51,6 +54,7 @@ namespace CardGame
                 }
                 //TODO: some cool animation
             }
+            viz.ShowShadow();
             hand.GetComponent<HandViz>().LayoutContent();
         }
 
@@ -60,7 +64,7 @@ namespace CardGame
             hand.GetComponent<RectTransform>().GetWorldCorners(v);
 
             //Debug.Log(v[0].x + ", " + v[0].y + ", " + v[2].x + ", " + v[2].y);
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             // Check to see if the point is in the calculated bounds
             if (transform.position.x >= v[0].x &&
                 transform.position.x <= v[2].x &&
@@ -72,5 +76,15 @@ namespace CardGame
             return true;
         }
 
+        private void OnPickUp()
+        {
+            viz.HideShadow();
+        }
+
+        public void UpdateValues()
+        {
+            var pair = BuffManager.Instance.BuffCard(Card);
+            viz.ChangeValues(pair.Key, pair.Value);
+        }
     }
 }

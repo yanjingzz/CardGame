@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Drink beer
   Description: A drink never hurt nobody.
-  Image: {fileID: 0}
+  Image: {fileID: 21300010, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 4
   Time: 20
   Points: 0

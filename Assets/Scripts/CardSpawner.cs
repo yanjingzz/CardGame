@@ -9,16 +9,15 @@ namespace CardGame
 		public HandViz hands;
 		public List<Card> cardPool;
 		public GameObject cardPrefab;
-		public Card RandomlyGetOne()
+		public CardManager RandomlyGetOne()
 		{
 			Card card = cardPool[Random.Range(0, cardPool.Count)];
 
-            Spawn(card);
+            return Spawn(card);
 
-            return card;
         }
 
-        public void Spawn(Card card)
+        public CardManager Spawn(Card card)
         {
             if (card.Type == CardType.Art ||
                 card.Type == CardType.Gameplay ||
@@ -33,8 +32,10 @@ namespace CardGame
 
             Debug.Log("Spawning: " + card);
             GameObject handCard = Instantiate(cardPrefab);
-            handCard.GetComponent<CardManager>().Card = card;
+            var manager = handCard.GetComponent<CardManager>();
+            manager.Card = card;
             hands.AddCard(handCard);
+            return manager;
         }
 
     }

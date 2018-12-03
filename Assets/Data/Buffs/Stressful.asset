@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Stressful
   Description: So many things to do
+  Image: {fileID: 21300010, guid: 63b833d59421d4addbe20e1b258147cd, type: 3}
   Effects:
   - time: -1
     point: -1
@@ -22,3 +23,4 @@ MonoBehaviour:
     point: -1
   - time: -2
     point: -1
+  length: 2880

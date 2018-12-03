@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Gameplay
   Description: This is the description
-  Image: {fileID: 0}
+  Image: {fileID: 21300002, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 240
   Points: 4

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Music
   Description: This is the description
-  Image: {fileID: 0}
+  Image: {fileID: 21300012, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 0
   Time: 180
   Points: 3

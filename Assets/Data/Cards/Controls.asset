@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Controls
   Description: This is the description
-  Image: {fileID: 0}
+  Image: {fileID: 21300018, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 3
   Time: 120
   Points: 2

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Name: UI
   m_EditorClassIdentifier: 
   Title: UI
-  Description: You need an interface
-  Image: {fileID: 0}
-  Type: 2
-  Time: 120
-  Points: 2
-  UnlockCards:
-  - {fileID: 11400000, guid: 546d215e0fb74f44d8c7a7e9fe6acac4, type: 2}
+  Description: Oops, now I can't go back to the menu
+  Image: {fileID: 21300024, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
+  Type: 0
+  Time: 180
+  Points: 3
+  UnlockCards: []
   AddBuffs: []

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: AI
   m_EditorClassIdentifier: 
   Title: AI
-  Description: Find a robot
-  Image: {fileID: 0}
+  Description: Beep, boop, I'm a robot
+  Image: {fileID: 21300038, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 240
   Points: 4
+  UnlockCards: []
+  AddBuffs: []

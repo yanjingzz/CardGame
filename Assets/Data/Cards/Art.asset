@@ -11,9 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
   m_Name: Art
   m_EditorClassIdentifier: 
-  Title: 2D/3D Art
-  Description: At least it looks cool
-  Image: {fileID: 0}
+  Title: Art
+  Description: 2D or 3D? Realistic or cute? So many great choices...
+  Image: {fileID: 21300000, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 0
-  Time: 240
-  Points: 4
+  Time: 360
+  Points: 6
+  UnlockCards:
+  - {fileID: 11400000, guid: 539990963fba5a04fab98a91e43e45a4, type: 2}
+  - {fileID: 11400000, guid: 7ad1e990208e76f4dabdeeef47ebafb2, type: 2}
+  AddBuffs: []

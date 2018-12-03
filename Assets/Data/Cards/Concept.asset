@@ -9,15 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
-  m_Name: Concept Art
+  m_Name: Concept
   m_EditorClassIdentifier: 
-  Title: Concept Art
-  Description: You need the art.
-  Image: {fileID: 0}
-  Type: 0
-  Time: 300
-  Points: 5
+  Title: Concept
+  Description: Every great invention starts with a spark
+  Image: {fileID: 21300004, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
+  Type: 2
+  Time: 180
+  Points: 3
   UnlockCards:
-  - {fileID: 11400000, guid: 539990963fba5a04fab98a91e43e45a4, type: 2}
-  - {fileID: 11400000, guid: 7ad1e990208e76f4dabdeeef47ebafb2, type: 2}
+  - {fileID: 11400000, guid: 546d215e0fb74f44d8c7a7e9fe6acac4, type: 2}
   AddBuffs: []

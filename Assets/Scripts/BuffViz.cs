@@ -6,7 +6,7 @@ namespace CardGame
 {
     public class BuffViz : MonoBehaviour 
     {
-        Buff _buff;
+        [SerializeField] Buff _buff;
         public Buff Buff 
         { 
             get { return _buff; }

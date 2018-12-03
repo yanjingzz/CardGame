@@ -11,6 +11,7 @@ namespace CardGame
 
         bool dragging;
         public Action OnDrop;
+        public Action OnPickup;
 
         Vector3 lastPos;
         Vector3 offSet;
@@ -43,6 +44,8 @@ namespace CardGame
             dragging = true;
             offSet = (Vector2)transform.position - eventData.position;
             offSet.z = -1;
+            if (OnPickup != null)
+                OnPickup();
 
         }
 
