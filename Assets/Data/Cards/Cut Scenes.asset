@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Cut Scenes
   m_EditorClassIdentifier: 
   Title: Cut Scenes
-  Description: This is the description
+  Description: Make your story come to life.
   Image: {fileID: 21300040, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 2
   Time: 240

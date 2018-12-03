@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: Publish
   m_EditorClassIdentifier: 
   Title: Publish
-  Description: Thank you for playing
-  Image: {fileID: 0}
+  Description: Ah, yes. The most important step.
+  Image: {fileID: 21300056, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 5
   Time: 30
   Points: 0

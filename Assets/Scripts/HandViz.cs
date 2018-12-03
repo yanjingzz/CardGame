@@ -39,6 +39,7 @@ namespace CardGame
         {
 
             var layoutRT = layout.GetComponent<RectTransform>();
+            LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRT);
             var lh = layoutRT.rect.height;
             var lw = layoutRT.rect.width;
 
@@ -49,8 +50,9 @@ namespace CardGame
 
             if(lh > 0 && lw > 0)
             {
-                var scale = Mathf.Min(Mathf.Min(w / lw, h / lh), 1);
 
+                var scale = Mathf.Min(Mathf.Min(w / lw, h / lh), 1);
+                Debug.Log("Hand: layout content " + lw);
                 layout.transform.localScale = new Vector2(scale, scale);
             } else
             {
@@ -61,7 +63,7 @@ namespace CardGame
             {
                 child.localScale = new Vector3(1, 1, 1);
             }
-            LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRT);
+
 
 
         }

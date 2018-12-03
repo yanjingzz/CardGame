@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Sound FX
   m_EditorClassIdentifier: 
   Title: Sound FX
-  Description: This is the description
+  Description: The clicks, the pops and the swooshes
   Image: {fileID: 21300046, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 0
   Time: 120

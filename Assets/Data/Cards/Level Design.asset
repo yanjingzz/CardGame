@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Level Design
   m_EditorClassIdentifier: 
   Title: Level Design
-  Description: This is the description
+  Description: Gotta keep that interest curve curved
   Image: {fileID: 21300026, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 180

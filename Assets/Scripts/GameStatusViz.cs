@@ -10,7 +10,7 @@ namespace CardGame
 
         public Text time;
         public Text art,feel,tech,gameplay;
-
+        public Text gameOverRemark;
         public GameObject GameOverPanel;
 
         public void DisplayStatus()
@@ -26,8 +26,9 @@ namespace CardGame
 
         }
 
-        public void DisplayGameOver()
+        public void DisplayGameOver(string remark)
         {
+            gameOverRemark.text = remark;
             GameOverPanel.SetActive(true);
         }
 

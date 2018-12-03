@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Play test
   m_EditorClassIdentifier: 
   Title: Playtest
-  Description: This is the description
+  Description: It's all about the balance
   Image: {fileID: 21300048, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 120

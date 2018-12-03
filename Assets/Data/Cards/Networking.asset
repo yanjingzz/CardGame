@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Networking
   m_EditorClassIdentifier: 
   Title: Networking
-  Description: This is the description
+  Description: For the players to make friends...or enemies
   Image: {fileID: 21300042, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 3
   Time: 180

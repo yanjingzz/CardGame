@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   Title: Chat
-  Description: Chit-chat with your friends helps make the creative juice flow.
+  Description: Your friends texted you. Are you going to respond?
   Image: {fileID: 21300032, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 4
   Time: 30

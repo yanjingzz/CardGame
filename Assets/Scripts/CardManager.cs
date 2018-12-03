@@ -44,12 +44,19 @@ namespace CardGame
 
         private void OnDrop()
         {
+            viz.OnDrop();
             if(InPlayArea())
             {
-                bool played = GameManager.Instance.PlayCard(this);
-                if(played)
+
+                bool canPlay = GameManager.Instance.CanPlayCard(this);
+                if(canPlay)
                 {
-                    Destroy(gameObject);
+                    //Debug.Log("reset parent");
+                    transform.SetParent(GameObject.FindWithTag("Canvas").transform, true);
+                    GameManager.Instance.PlayCard(this);
+
+                    viz.PlaceAnimation(Card);
+                    Destroy(gameObject, 3);
                     return;
                 }
                 //TODO: some cool animation
@@ -78,7 +85,7 @@ namespace CardGame
 
         private void OnPickUp()
         {
-            viz.HideShadow();
+            viz.OnPickup();
         }
 
         public void UpdateValues()
@@ -86,5 +93,8 @@ namespace CardGame
             var pair = BuffManager.Instance.BuffCard(Card);
             viz.ChangeValues(pair.Key, pair.Value);
         }
+
+
     }
+
 }

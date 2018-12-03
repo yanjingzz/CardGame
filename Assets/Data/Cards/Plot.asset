@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Plot
   m_EditorClassIdentifier: 
   Title: Plot
-  Description: This is the description
+  Description: 'Plot twist: there is not plot to this game'
   Image: {fileID: 21300016, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 2
   Time: 240

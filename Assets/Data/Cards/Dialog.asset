@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   Title: Dialog
-  Description: This is the description
+  Description: '"What would they say?"'
   Image: {fileID: 21300050, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 2
   Time: 180

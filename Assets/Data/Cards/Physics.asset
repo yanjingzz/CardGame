@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Physics
   m_EditorClassIdentifier: 
   Title: Physics
-  Description: This is the description
+  Description: I blame Newton for this
   Image: {fileID: 21300030, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 3
   Time: 240

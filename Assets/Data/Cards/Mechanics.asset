@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Mechanics
   m_EditorClassIdentifier: 
   Title: Mechanics
-  Description: This is the description
+  Description: Action! Puzzles! And more!
   Image: {fileID: 21300014, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 180

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Character Design
   m_EditorClassIdentifier: 
   Title: Character Design
-  Description: This is the description
+  Description: How do they look? What do they think?
   Image: {fileID: 21300028, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 2
   Time: 300

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Name: Music
   m_EditorClassIdentifier: 
   Title: Music
-  Description: This is the description
+  Description: Music is an dispensable part of a game. How can any game live without
+    music??
   Image: {fileID: 21300012, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 0
   Time: 180

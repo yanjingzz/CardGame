@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Gameplay
   m_EditorClassIdentifier: 
   Title: Gameplay
-  Description: This is the description
+  Description: What's a game without......game, and play?
   Image: {fileID: 21300002, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 1
   Time: 240

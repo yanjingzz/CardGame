@@ -42,7 +42,7 @@ namespace CardGame
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
             dragging = true;
-            offSet = (Vector2)transform.position - eventData.position;
+            offSet = transform.position - Camera.main.ScreenToWorldPoint(eventData.position);
             offSet.z = -1;
             if (OnPickup != null)
                 OnPickup();
@@ -51,7 +51,7 @@ namespace CardGame
 
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
-            lastPos = eventData.position;
+            lastPos = Camera.main.ScreenToWorldPoint(eventData.position);
             lastPos.z = 0;
             //Debug.Log(Camera.main.WorldToViewportPoint(lastPos));
         }

@@ -18,8 +18,26 @@ namespace CardGame
             return Title;
         }
 
+        public override bool Equals(object other)
+        {
+            var card = other as Card;
+            return card != null &&
+                   base.Equals(other) &&
+                   Title == card.Title;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 1241924671;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Title);
+            return hashCode;
+        }
+
         public List<Card> UnlockCards;
 		public List<AddingBuffs> AddBuffs;
+
+
     }
 
 	[System.Serializable]

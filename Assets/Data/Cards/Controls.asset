@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Controls
   m_EditorClassIdentifier: 
   Title: Controls
-  Description: This is the description
+  Description: Mouse and keyboard and fingers and joystick
   Image: {fileID: 21300018, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 3
   Time: 120

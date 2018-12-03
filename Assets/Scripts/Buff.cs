@@ -11,7 +11,12 @@ namespace CardGame
         public Sprite Image;
 		public BuffType[] Effects;
 		public int length = 2880;
-	}
+
+        public override string ToString()
+        {
+            return Title;
+        }
+    }
 
 	[System.Serializable]
 	public struct BuffType

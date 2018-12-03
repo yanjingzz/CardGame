@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27de90de9245413a966416868761d5d, type: 3}
   m_Name: Eat
   m_EditorClassIdentifier: 
-  Title: Eat
-  Description: You gotta eat
+  Title: Eat some food
+  Description: Even Superman's gotta eat. Wait, does he?
   Image: {fileID: 21300020, guid: 3816b583d80dd46dfa83470a2ef94a2a, type: 3}
   Type: 4
   Time: 30

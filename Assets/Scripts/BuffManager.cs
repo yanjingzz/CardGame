@@ -65,7 +65,7 @@ namespace CardGame
 					
 					if (states.Exists(x => x.buff == newState))
 					{
-						Debug.Log("Same buff" + newState.Title);
+						Debug.Log("Same buff" + newState);
 					} else
 					{
 						if (Random.Range(0f, 1f) <= addBuff.probability)
@@ -87,7 +87,7 @@ namespace CardGame
 					{
 						if (Random.Range(0f, 1f) <= addBuff.probability)
 						{
-                            Debug.Log("Removing buff " + newState.Title);
+                            Debug.Log("Removing buff " + newState);
                             if (myBuff.buffInGame != null)
 								Destroy(myBuff.buffInGame);
 							states.Remove(myBuff);
@@ -98,5 +98,22 @@ namespace CardGame
 			}
             return changed;
 		}
-	}
+
+        public bool AddBuff(Buff buff)
+        {
+            if (states.Exists(x => x.buff == buff))
+            {
+                Debug.Log("Same buff" + buff);
+                return false;
+            }
+
+            Debug.Log("Adding buff " + buff);
+
+            GameObject mybuff = Instantiate(buffPrefab, buffSlot);
+            mybuff.GetComponent<BuffViz>().Buff = buff;
+            states.Add(new MyBuff(buff, buff.length, mybuff));
+            return true;
+
+        }
+    }
 }
